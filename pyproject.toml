@@ -1,0 +1,28 @@
+[project]
+name = "pdf-extractext-orchestrator"
+version = "1.0.0"
+description = "Orquestador de PDF-extractext: API publica y saga de subida de documentos."
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "fastapi>=0.162",
+    "granian>=2.8",
+    "httpx>=0.28",
+    "pydantic-settings>=2.16",
+    "python-multipart>=0.0.27",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+    "pytest-asyncio>=1.3",
+    "pytest-cov>=7.0",
+]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+asyncio_default_fixture_loop_scope = "function"
+testpaths = ["tests"]
+
+[tool.coverage.run]
+source = ["app"]
